@@ -3,4 +3,5 @@ WORKDIR /app
 COPY . .
 RUN npm install
 EXPOSE 5000
-CMD ["node", "api/index.js"]
+EXPOSE 9229
+CMD ["node", "--inspect-brk=0.0.0.0:9229", "api/index.js"]
