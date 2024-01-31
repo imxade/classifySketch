@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@fastify/static": "^6.12.0",
+    "canvas": "^2.11.2",
+    "fastify": "^4.26.0",
+    "fs-extra": "^11.2.0"
+  }
+}

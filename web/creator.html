@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=0.9,user-scalable=0"
+    />
+    <meta charset="UTF-8" />
+    <title>Data Creator</title>
+    <link rel="stylesheet" href="web/css/styles.css" />
+  </head>
+
+  <body>
+    <div id="content">
+      <h1>Train</h1>
+      <div>
+        <input id="student" type="text" placeholder="type your name" />
+        <span id="instructions"></span>
+        <button id="advanceBtn" onclick="start();">START</button>
+      </div>
+      <div id="sketchPadContainer"></div>
+    </div>
+
+    <a id="extLink" href="https://github.com/imxade/classifySketch" target="_">
+      <button>Source</button>
+    </a>
+    <script src="common/draw.js"></script>
+    <script src="web/js/sketchPad.js"></script>
+    <script src="web/js/creator.js"></script>
+  </body>
+</html>

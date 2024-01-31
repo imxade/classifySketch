@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width,
+           maximum-scale=0.9,user-scalable=0"
+    />
+    <meta charset="UTF-8" />
+    <title>Data Creator</title>
+    <link rel="stylesheet" href="web/css/styles.css" />
+  </head>
+  <body>
+    <h1>Data Viewer</h1>
+    <div id="inputContainer">
+      <div id="predictedLabelContainer"></div>
+    </div>
+    <div id="chartContainer"></div>
+    <div id="controlPanel">
+      <button onclick="toggleInput()">Toggle Input</button>
+      <div id="statistics"></div>
+    </div>
+    <div id="container"></div>
+    <script src="/tmp/data/jsObjects/features.js"></script>
+    <script src="/tmp/data/jsObjects/training.js"></script>
+    <script src="/tmp/data/jsObjects/testing.js"></script>
+    <script src="/tmp/data/jsObjects/minMax.js"></script>
+
+    <script src="common/constants.js"></script>
+    <script src="common/utils.js"></script>
+    <script src="common/draw.js"></script>
+    <script src="common/featureFunctions.js"></script>
+    <script src="common/classifiers/knn.js"></script>
+
+    <script src="web/js/display.js"></script>
+    <script src="web/js/sketchPad.js"></script>
+
+    <script src="web/chart/graphics.js"></script>
+    <script src="web/chart/math.js"></script>
+    <script src="web/chart/chart.js"></script>
+
+    <script src="web/js/viewer.js"></script>
+  </body>
+</html>

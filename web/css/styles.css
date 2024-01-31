@@ -1,0 +1,134 @@
+@import url("https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css");
+
+body {
+  font-family: Arial;
+  overscroll-behavior: none;
+  margin: 0;
+}
+
+#content {
+  display: grid;
+  height: 100vh;
+  justify-items: center;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center; /* Added alignment for cross-axis */
+}
+
+button {
+  cursor: pointer;
+  padding: 1% 2%;
+  width: 60%;
+  margin: 0 auto; /* Center the button using auto margin */
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: gray;
+  cursor: default;
+}
+
+.sketchpad-canvas {
+  background-color: black;
+  box-shadow: 0px 0px 10px 2px gray;
+}
+
+.sketchpad-button {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.sketchpad-button:disabled {
+  background-color: gray;
+  cursor: default;
+}
+
+#sketchPadContainer {
+  visibility: hidden;
+}
+
+#instructions {
+  margin-top: 10px;
+}
+
+#advanceBtn {
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+.thumb {
+  width: 100%;
+}
+.rowLabel {
+  flex: 2 1 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.sampleContainer {
+  flex: 1 1 0;
+  background-color: rosybrown;
+  text-align: center;
+  border-radius: 10%;
+  margin: 1px;
+  overflow: hidden;
+}
+.blur {
+  filter: blur(5px);
+}
+
+.emphasize {
+  background-color: yellow !important;
+}
+
+#container {
+  width: calc(100% - 500px);
+}
+
+#chartContainer {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#inputContainer {
+  position: fixed;
+  right: 500px;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+  margin: 10px;
+}
+
+#controlPanel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 500px;
+  text-align: center;
+  padding: 10px;
+}
+
+#predictedLabelContainer {
+  color: white;
+  font-size: 30px;
+  position: relative;
+}
+
+#statistics {
+  font-size: 20px;
+  padding: 20px;
+}
+
+#extLink {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
