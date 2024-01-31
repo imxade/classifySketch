@@ -9,9 +9,10 @@ const app = fastify();
 const constants = require("../common/constants.js");
 const DATA_DIR = constants.DATA_DIR;
 const RAW_DIR = constants.RAW_DIR;
+const ROOT = process.cwd();
 
 app.register(fastifyStatic, {
-  root: path.join(__dirname, ".."),
+  root: ROOT,
   prefix: "/",
 });
 
@@ -34,6 +35,16 @@ async function execAsync(command) {
   });
 }
 
+app.get("/", async (req, reply) => {
+  const html = fs.readFileSync(`${ROOT}/web/creator.html`, "utf-8");
+  return reply.status(200).type("text/html").send(html);
+});
+
+app.get("/test", async (req, reply) => {
+  const html = fs.readFileSync(`${ROOT}/web/viewer.html`, "utf-8");
+  return reply.status(200).type("text/html").send(html);
+});
+
 app.post("/saveJson", async (request, reply) => {
   if (!fs.existsSync(RAW_DIR)) {
     fs.mkdirSync(RAW_DIR, { recursive: true });
@@ -52,7 +63,7 @@ app.post("/saveJson", async (request, reply) => {
 });
 
 app.post("/train", async (request, reply) => {
-  const nodeFiles = path.join(process.cwd(), "nodeExec");
+  const nodeFiles = `${ROOT}/nodeExec`;
   try {
     await execAsync(`${nodeFiles}/dataset_generator.js`);
     await execAsync(`${nodeFiles}/feature_extractor.js`);
@@ -81,22 +92,6 @@ app.post("/clearAllData", async (request, reply) => {
     console.error("Error clearing data directory:", err);
     reply.code(500).send({ error: "Internal Server Error" });
   }
-});
-
-app.get("/", async (req, reply) => {
-  const html = fs.readFileSync(
-    path.join(__dirname, "../web/creator.html"),
-    "utf-8",
-  );
-  return reply.status(200).type("text/html").send(html);
-});
-
-app.get("/test", async (req, reply) => {
-  const html = fs.readFileSync(
-    path.join(__dirname, "../web/viewer.html"),
-    "utf-8",
-  );
-  return reply.status(200).type("text/html").send(html);
 });
 
 module.exports = async function handler(req, reply) {
