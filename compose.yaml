@@ -10,7 +10,7 @@ services:
       - 9229:9229
     develop:
       watch:
-        - path: .
+        - path: ./package.json
           action: rebuild
         - path: .
           target: /app
