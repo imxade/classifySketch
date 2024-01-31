@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    develop:
+      watch:
+        - path: .
+          action: rebuild
+        - path: .
+          target: /app
+          action: sync
+    # environment:
+    #   - API_KEY=
+    volumes:
+      - ./:/app
+      - /tmp:/tmp

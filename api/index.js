@@ -52,7 +52,7 @@ app.post("/saveJson", async (request, reply) => {
 });
 
 app.post("/train", async (request, reply) => {
-  const nodeFiles = path.join(process.cwd(), 'nodeExec');
+  const nodeFiles = path.join(process.cwd(), "nodeExec");
   try {
     await execAsync(`${nodeFiles}/dataset_generator.js`);
     await execAsync(`${nodeFiles}/feature_extractor.js`);
@@ -105,7 +105,7 @@ module.exports = async function handler(req, reply) {
 };
 
 app
-  .listen({ port: 4000, host: "0.0.0.0" })
+  .listen({ port: 5000, host: "0.0.0.0" })
   .then((address) => console.log(`Server On`))
   .catch((err) => {
     console.error(err);
