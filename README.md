@@ -1,3 +1,6 @@
+
+> Link: https://classifysketch.vercel.app
+
 ## Sketch Recogniser
 
 - Classifies the drawings based on collected data
@@ -5,7 +8,6 @@
 
 ## Stack
 
-- Vanilla JS
 - Node
 - Fastify
 
@@ -32,7 +34,7 @@ Before you begin, ensure you have the following installed on your machine:
 
 4. Once the containers are up and running, you can access your application at http://localhost:5000.
 
-> This project is far from complete and is bound to change drastically.
+> This project is far from complete and is bound to change 
 
 ## Acknowledgments
 
